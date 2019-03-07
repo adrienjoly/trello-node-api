@@ -42,6 +42,8 @@ declare class TrelloCard {
 
     del(cardId: string): Promise<any>;
 
+    addComment(cardId: string, params: any): Promise<any>;
+
 }
 
 declare class TrelloCustomField {

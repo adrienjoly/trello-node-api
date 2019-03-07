@@ -44,6 +44,12 @@ declare class TrelloCard {
 
 }
 
+declare class TrelloCustomField {
+
+    setCustomField(cardId: string, customFieldId: string, params: any): Promise<any>;
+
+}
+
 declare class TrelloChecklist {
 
     create(params: any): Promise<any>;
@@ -158,6 +164,7 @@ declare class TrelloNodeApi {
     notification: TrelloNotification;
     organization: TrelloOrganization;
     webhook: TrelloWebhook;
+    customField: TrelloCustomField;
 
 }
 

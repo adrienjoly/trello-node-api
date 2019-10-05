@@ -51,28 +51,6 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
 
 ## Examples
 
-#### [Actions](https://github.com/bhushankumarl/trello-node-api/wiki/Actions-TypeScript)
-
-#### [Boards](https://github.com/bhushankumarl/trello-node-api/wiki/Boards-TypeScript)
-
-#### [Cards](https://github.com/bhushankumarl/trello-node-api/wiki/Cards-TypeScript)
-
-#### [Checklists](https://github.com/bhushankumarl/trello-node-api/wiki/Checklists-TypeScript)
-
-#### [Enterprises](https://github.com/bhushankumarl/trello-node-api/wiki/Enterprises-TypeScript)
-
-#### [Labels](https://github.com/bhushankumarl/trello-node-api/wiki/Labels-TypeScript)
-
-#### [Lists](https://github.com/bhushankumarl/trello-node-api/wiki/Lists-TypeScript)
-
-#### [Members](https://github.com/bhushankumarl/trello-node-api/wiki/Members-TypeScript)
-
-#### [Notifications](https://github.com/bhushankumarl/trello-node-api/wiki/Notifications-TypeScript)
-
-#### [Organizations](https://github.com/bhushankumarl/trello-node-api/wiki/Organizations-TypeScript)
-
-#### [Webhooks](https://github.com/bhushankumarl/trello-node-api/wiki/Webhooks-TypeScript)
-
 ### Actions
 #### Delete Action
 ```
@@ -338,6 +316,19 @@ Originally by [Bhushankumar L](mailto:bhushankumar.lilapara@gmail.com).
         subscribed: false
     };
     Trello.card.update(id, data).then(function (response) {
+        console.log('response ', response);
+    }).catch(function (error) {
+        console.log('error', error);
+    });    
+```
+
+#### Add comment to Card
+```
+    var cardId = 'CARD_ID'; // REQUIRED
+    var commentData = {
+        text: 'this is my comment',
+    };
+    Trello.card.addComment(cardId, commentData).then(function (response) {
         console.log('response ', response);
     }).catch(function (error) {
         console.log('error', error);
